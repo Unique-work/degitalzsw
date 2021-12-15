@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
 <%@ page import="com.dfgsd.model.User" %>
 <%
 String path = request.getContextPath();
@@ -51,34 +52,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div id="right">
 		<div id="login">
-                <% 
-                        //String userName = (String)session.getAttribute("userName");
-                User user = (User)session.getAttribute("user");      
-                if(user == null){
-                %>
-                        <form id="loginform" name="loginform" method="post" action="doLogin.jsp" >
-                                <div><strong>登录名：</strong><input name="txtUser" id="txtUser" size="15" value="" /></div>
-                                <div><strong>密　码：</strong><input name="txtPassword" type="password" id="txtPassword" size="15" value="" /></div>
-                                <div>
-                                        <strong>验证码：</strong><input name="verifyCode" id="verifyCode" size="4" />
-                                        <img src="VerifyCodeServlet"  onclick="this.src='<%=request.getContextPath()%>VServlet'" />
-                                </div>
-                                <div><input type="submit" value="登录" name="submit" class="picbut" />　
-                                <input name="reg" type="button" value="注册用户" class="picbut" onclick="javascript:location.href=('regist.jsp');" />
-                                </div>
-                                <div><a href="findPwd.jsp">找回密码</a></div>
-                                <div><font color=red size=3></font></div>
-                         </form>
-<%}else{%>
-                <ul>
-                        <li>欢迎回来,<%=user.getUserName() %></li>
-                        <li><a href="">我的购物车</a></li>
-                        <li><a href="">我的订单</a></li>
-                        <li><a href="userInfo.jsp">个人信息</a></li>
-                        <li><a href="doLogout.jsp">退出</a></li>
-                </ul>
-<%} %>
-                </div>
+            <%@ include file="login.jsp"%>
+        </div>
 		<div class="news">
 			<p><img src="images/title3.gif" alt="" width="100" height="30" /></p>
 			<ol>
