@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Orderimpl {
     int row = 0;
@@ -16,7 +17,11 @@ public class Orderimpl {
     private PreparedStatement ps;
     private ResultSet rs;
     private String sql;
+ public ArrayList<> (){
 
+
+
+    }
     public boolean insert(Order o) {
         sql = "inster into order_info(userId,status,odertime) values(?,?,?) ";
         try {
