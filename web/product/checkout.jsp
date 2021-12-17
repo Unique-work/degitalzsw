@@ -48,25 +48,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</ul>
 	</div>
         <div id="right">
-         <div id="login">
-			<form id="loginform" name="loginform" method="post" action="<%=path %>/LoginServlet" >
-				<div><strong>登录名：</strong><input name="txtUser" id="txtUser" size="15" /></div>
-				<div><strong>密　码：</strong><input name="txtPassword" type="password" id="txtPassword" size="15" /></div>
-				<div>
-					<strong>验证码：</strong><input name="verifyCode" id="verifyCode" size="4" />
-					<img src="<%=path %>/VerifyCodeServlet"  onclick="this.src='<%=path %>/VerifyCodeServlet'" />
-				</div>
-				<div><input type="submit" value="登录" name="submit" class="picbut" />　
-				<input name="reg" type="button" value="注册用户" class="picbut" onclick="javascript:location.href=('regist.jsp');" />
-				</div>
-			 </form>
-		<ul>
-			<li>欢迎回来，</li>
-			<li><a href="list_cart.jsp">我的购物车</a></li>
-			<li><a href="list_order.jsp">我的订单</a></li>
-			<li><a href="<%=path %>/userInfo.jsp">个人信息</a></li>
-			<li><a href="../LogoutServlet">退出</a></li>
-		</ul>
+         <%@ include file="../login.jsp" %>
+		
 		</div>
             <div class="news">
                 <p><img src="../images/title3.gif" alt="" width="100" height="30" /></p>
